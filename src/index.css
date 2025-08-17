@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ECC WORKS LIMITED Design System - Professional Corporate Aesthetic
+Color Palette: Deep Blue, Vibrant Red, Clean White
+Font: Sora - Modern Sans-Serif
+*/
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --ecc-deep-blue: 220 100% 20%;
+    --ecc-vibrant-red: 0 85% 55%;
+    --ecc-navy: 220 90% 15%;
+    --ecc-light-blue: 220 60% 95%;
+    
+    /* Base Colors */
+    --background: 0 0% 100%;
+    --foreground: 220 90% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 90% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 90% 15%;
+
+    --primary: 220 100% 20%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 60% 95%;
+    --secondary-foreground: 220 90% 15%;
+
+    --muted: 220 60% 95%;
+    --muted-foreground: 220 30% 40%;
+
+    --accent: 0 85% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 30% 90%;
+    --input: 220 30% 90%;
+    --ring: 0 85% 55%;
+
+    --radius: 0.5rem;
+
+    /* Custom Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--ecc-deep-blue)), hsl(var(--ecc-navy)));
+    --gradient-accent: linear-gradient(90deg, hsl(var(--ecc-vibrant-red)), hsl(var(--ecc-deep-blue)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--ecc-light-blue)));
+    
+    /* Shadows */
+    --shadow-corporate: 0 10px 30px -10px hsl(var(--ecc-deep-blue) / 0.2);
+    --shadow-card: 0 4px 20px -2px hsl(var(--ecc-deep-blue) / 0.1);
+    --shadow-glow: 0 0 40px hsl(var(--ecc-vibrant-red) / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 220 100% 20%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 85% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 90% 25%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 50% 30%;
+    --sidebar-ring: 0 85% 55%;
+  }
+
+  .dark {
+    --background: 220 90% 15%;
+    --foreground: 0 0% 100%;
+
+    --card: 220 85% 18%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 220 85% 18%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 85% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 80% 25%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 80% 25%;
+    --muted-foreground: 220 20% 70%;
+
+    --accent: 0 85% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 50% 30%;
+    --input: 220 50% 30%;
+    --ring: 0 85% 55%;
+    
+    --sidebar-background: 220 95% 12%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 85% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 90% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 220 60% 25%;
+    --sidebar-ring: 0 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sora;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Corporate Button Variants */
+  .btn-hero {
+    @apply bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 font-medium rounded-md shadow-md hover:shadow-lg transition-all duration-300;
+  }
+  
+  /* Animation Classes */
+  .fade-in-up {
+    @apply animate-[fadeInUp_0.6s_ease-out_forwards] opacity-0 translate-y-8;
+  }
+  
+  .slide-in-left {
+    @apply animate-[slideInLeft_0.8s_ease-out_forwards] opacity-0 -translate-x-8;
+  }
+  
+  .scale-hover {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+  
+  /* Nigerian Pattern Accents */
+  .nigerian-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  
+  /* Corporate Gradients */
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .corporate-shadow {
+    box-shadow: var(--shadow-corporate);
+  }
+}
+
+@layer utilities {
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-shadow-md {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Custom Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(var(--ecc-vibrant-red) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(var(--ecc-vibrant-red) / 0.6);
+  }
+}
