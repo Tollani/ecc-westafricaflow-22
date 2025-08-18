@@ -16,15 +16,15 @@ const Navigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   const services = [
-    { name: "Installation", path: "/services#installation" },
-    { name: "Commissioning", path: "/services#commissioning" },
-    { name: "Maintenance", path: "/services#maintenance" },
-    { name: "HVAC Systems", path: "/services#hvac" },
-    { name: "Data Center Cooling", path: "/services#cooling" },
-    { name: "Procurement", path: "/services#procurement" },
-    { name: "Tendering", path: "/services#tendering" },
-    { name: "Logistics", path: "/services#logistics" },
-    { name: "Real Estate", path: "/services#real-estate" },
+    { name: "Installation", path: "/services/installation" },
+    { name: "Commissioning", path: "/services/commissioning" },
+    { name: "Maintenance", path: "/services/maintenance" },
+    { name: "HVAC Systems", path: "/services/hvac-systems" },
+    { name: "Data Center Cooling", path: "/services/data-center-cooling" },
+    { name: "Procurement", path: "/services/procurement" },
+    { name: "Tendering", path: "/services/tendering" },
+    { name: "Logistics", path: "/services/logistics" },
+    { name: "Real Estate", path: "/services/real-estate" },
   ];
 
   return (

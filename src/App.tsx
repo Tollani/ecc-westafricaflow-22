@@ -11,6 +11,15 @@ import Services from "./pages/Services";
 import Capabilities from "./pages/Capabilities";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Installation from "./pages/services/Installation";
+import Commissioning from "./pages/services/Commissioning";
+import Maintenance from "./pages/services/Maintenance";
+import HVACSystem from "./pages/services/HVACSystem";
+import DataCenterCooling from "./pages/services/DataCenterCooling";
+import Procurement from "./pages/services/Procurement";
+import Tendering from "./pages/services/Tendering";
+import Logistics from "./pages/services/Logistics";
+import RealEstate from "./pages/services/RealEstate";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +44,15 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/services/installation" element={<Installation />} />
+          <Route path="/services/commissioning" element={<Commissioning />} />
+          <Route path="/services/maintenance" element={<Maintenance />} />
+          <Route path="/services/hvac-systems" element={<HVACSystem />} />
+          <Route path="/services/data-center-cooling" element={<DataCenterCooling />} />
+          <Route path="/services/procurement" element={<Procurement />} />
+          <Route path="/services/tendering" element={<Tendering />} />
+          <Route path="/services/logistics" element={<Logistics />} />
+          <Route path="/services/real-estate" element={<RealEstate />} />
           <Route path="/capabilities" element={<Capabilities />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
