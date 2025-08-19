@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 const WhatsAppButton = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   
-  const whatsappNumber = "+2348091300339"; // Replace with actual WhatsApp number
+  const whatsappNumber = "+2348036508892";
   const message = "Hello! I'm interested in your electrical and mechanical services. Could you please provide more information?";
   
   const handleWhatsAppClick = () => {

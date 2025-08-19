@@ -23,7 +23,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center space-x-2 text-sm">
               <MapPin className="w-4 h-4 text-accent" />
-              <span>Lagos, Nigeria</span>
+              <span>1A, Street P, Abraham Adesanya Estate, Ajah, Lagos, Nigeria</span>
             </div>
             <p className="text-accent font-semibold text-sm">Serving West Africa</p>
             <p className="text-xs text-primary-foreground/60">Proudly Nigerian 🇳🇬</p>
@@ -78,7 +78,7 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-2 text-sm">
                 <Phone className="w-4 h-4 text-accent" />
-                <span>+234 (0) 123 456 7890</span>
+                <span>+2348036508892</span>
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Mail className="w-4 h-4 text-accent" />

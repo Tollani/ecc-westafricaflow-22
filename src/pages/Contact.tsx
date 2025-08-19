@@ -21,7 +21,8 @@ const Contact = () => {
                 <MapPin className="w-12 h-12 text-accent mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-foreground mb-2">Location</h3>
                 <p className="text-muted-foreground">
-                  Lagos, Nigeria<br />
+                  1A, Street P, Abraham Adesanya Estate<br />
+                  Ajah, Lagos, Nigeria<br />
                   <span className="text-accent font-medium">Serving West Africa</span>
                 </p>
               </CardContent>
@@ -32,7 +33,7 @@ const Contact = () => {
                 <Phone className="w-12 h-12 text-accent mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-foreground mb-2">Phone</h3>
                 <p className="text-muted-foreground">
-                  +234 (0) 123 456 7890<br />
+                  +2348036508892<br />
                   <span className="text-sm">24/7 Emergency Support</span>
                 </p>
               </CardContent>
@@ -195,7 +196,7 @@ const Contact = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center animate-scale-in">
             <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-4">
-              Call Now: +234 (0) 123 456 7890
+              Call Now: +2348036508892
             </Button>
             <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-4">
               Email: info@eccworksltd.com

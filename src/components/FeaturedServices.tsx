@@ -77,8 +77,8 @@ const FeaturedServices = () => {
                   className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground transition-all duration-300"
                   asChild
                 >
-                  <Link to={service.link}>
-                    Learn More
+                  <Link to="/contact#quote">
+                    Request a Quote
                   </Link>
                 </Button>
               </CardContent>
