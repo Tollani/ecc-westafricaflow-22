@@ -82,7 +82,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Mail className="w-4 h-4 text-accent" />
-                <span>info@eccworksltd.com</span>
+                <span>ewoh.aaron@eccworksltd.com</span>
               </div>
               
               {/* Quick Contact Form */}
@@ -121,10 +121,10 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-primary-foreground/80">
-              © 2024 ECC WORKS LIMITED. All rights reserved.
+              © 2025 ECC WORKS LIMITED. All rights reserved.
             </p>
             <p className="text-sm text-primary-foreground/80">
-              Contact our Managing Director: <span className="text-accent">director@eccworksltd.com</span>
+              Contact our Managing Director: <span className="text-accent">ewoh.aaron@eccworksltd.com</span>
             </p>
           </div>
         </div>
