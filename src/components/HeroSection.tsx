@@ -17,12 +17,12 @@ const HeroSection = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in-up">
           {/* Company Name */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-white via-accent to-primary bg-clip-text text-transparent drop-shadow-2xl">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-wider leading-tight">
+            <span className="text-white drop-shadow-2xl font-extrabold italic">
               ECC WORKS
             </span>
             <br />
-            <span className="bg-gradient-to-l from-accent via-white to-accent bg-clip-text text-transparent drop-shadow-xl animate-pulse">
+            <span className="text-accent drop-shadow-xl font-light tracking-widest">
               LIMITED
             </span>
           </h1>
