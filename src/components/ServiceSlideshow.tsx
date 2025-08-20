@@ -10,7 +10,7 @@ import hvacImage from "@/assets/photo_5850491347398675341_x.jpg";
 import coolingImage from "@/assets/data Center.jpg";
 import installationImage from "@/assets/service-installation-real.jpg";
 import maintenanceImage from "@/assets/service-maintenance-real.jpg";
-import hvacEquipmentImage from "@/assets/service-hvac-equipment-real.jpg";
+import hvacEquipmentImage from "@/assets/hvac equipment.jpg";
 import electricalWorkImage from "@/assets/electrical service.jpg";
 import technicianWorkImage from "@/assets/service-technician-real.jpg";
 import mechanicalSystemsImage from "@/assets/service-mechanical-real.jpg";
