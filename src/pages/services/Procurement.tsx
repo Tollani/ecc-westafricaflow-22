@@ -110,7 +110,7 @@ const Procurement = () => {
             </div>
             <div className="lg:pl-8">
               <img 
-                src="/src/assets/service-electrical-real.jpg" 
+                src="/src/assets/procurement-warehouse.jpg" 
                 alt="Equipment procurement and sourcing" 
                 className="rounded-lg shadow-lg w-full h-auto"
               />

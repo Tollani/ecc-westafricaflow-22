@@ -157,7 +157,7 @@ const RealEstate = () => {
             </div>
             <div className="lg:pl-8">
               <img 
-                src="/src/assets/service-datacenter-real.jpg" 
+                src="/src/assets/real-estate-building.jpg" 
                 alt="Real estate development and planning" 
                 className="rounded-lg shadow-lg w-full h-auto"
               />

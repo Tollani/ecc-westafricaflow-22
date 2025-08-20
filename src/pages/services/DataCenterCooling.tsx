@@ -114,7 +114,7 @@ const DataCenterCooling = () => {
             </div>
             <div className="lg:pl-8">
               <img 
-                src="/src/assets/hero-datacenter.jpg" 
+                src="/hero-datacenter.jpg" 
                 alt="Data center cooling system" 
                 className="rounded-lg shadow-lg w-full h-auto"
               />

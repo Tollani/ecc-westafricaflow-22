@@ -162,7 +162,7 @@ const Tendering = () => {
             </div>
             <div className="lg:pl-8">
               <img 
-                src="/src/assets/service-technician-work.jpg" 
+                src="/src/assets/tendering-business.jpg" 
                 alt="Project planning and tendering" 
                 className="rounded-lg shadow-lg w-full h-auto"
               />
