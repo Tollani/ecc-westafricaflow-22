@@ -9,7 +9,7 @@ import {
 import hvacImage from "@/assets/hvac system.jpg";
 import coolingImage from "@/assets/data Center.jpg";
 import installationImage from "@/assets/installation service.jpg";
-import maintenanceImage from "@/assets/service-maintenance-real.jpg";
+import maintenanceImage from "@/assets/maintenance service.jpg";
 import hvacEquipmentImage from "@/assets/hvac equipment.jpg";
 import electricalWorkImage from "@/assets/electrical service.jpg";
 import technicianWorkImage from "@/assets/service-technician-real.jpg";
