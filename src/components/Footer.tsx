@@ -64,11 +64,36 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Our Services</h3>
             <div className="space-y-3 text-sm">
-              <p className="hover:text-accent cursor-pointer transition-colors duration-300">Installation</p>
-              <p className="hover:text-accent cursor-pointer transition-colors duration-300">Maintenance</p>
-              <p className="hover:text-accent cursor-pointer transition-colors duration-300">HVAC Systems</p>
-              <p className="hover:text-accent cursor-pointer transition-colors duration-300">Data Center Cooling</p>
-              <p className="hover:text-accent cursor-pointer transition-colors duration-300">Procurement</p>
+              <Link 
+                to="/services/installation" 
+                className="block hover:text-accent transition-colors duration-300"
+              >
+                Installation
+              </Link>
+              <Link 
+                to="/services/maintenance" 
+                className="block hover:text-accent transition-colors duration-300"
+              >
+                Maintenance
+              </Link>
+              <Link 
+                to="/services/hvac-systems" 
+                className="block hover:text-accent transition-colors duration-300"
+              >
+                HVAC Systems
+              </Link>
+              <Link 
+                to="/services/data-center-cooling" 
+                className="block hover:text-accent transition-colors duration-300"
+              >
+                Data Center Cooling
+              </Link>
+              <Link 
+                to="/services/procurement" 
+                className="block hover:text-accent transition-colors duration-300"
+              >
+                Procurement
+              </Link>
             </div>
           </div>
 
