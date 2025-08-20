@@ -13,7 +13,7 @@ import maintenanceImage from "@/assets/maintenance service.jpg";
 import hvacEquipmentImage from "@/assets/hvac equipment.jpg";
 import electricalWorkImage from "@/assets/electrical service.jpg";
 import technicianWorkImage from "@/assets/service-technician-real.jpg";
-import mechanicalSystemsImage from "@/assets/service-mechanical-real.jpg";
+import mechanicalSystemsImage from "@/assets/mechanical system.jpg";
 
 const ServiceSlideshow = () => {
   const serviceImages = [
