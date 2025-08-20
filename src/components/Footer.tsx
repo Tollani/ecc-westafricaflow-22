@@ -82,7 +82,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Mail className="w-4 h-4 text-accent" />
-                <span>ewoh.aaron@eccworksltd.com</span>
+                <span>info@eccworksltd.com</span>
               </div>
               
               {/* Quick Contact Form */}
@@ -124,7 +124,7 @@ const Footer = () => {
               © 2025 ECC WORKS LIMITED. All rights reserved.
             </p>
             <p className="text-sm text-primary-foreground/80">
-              Contact our Managing Director: <span className="text-accent">ewoh.aaron@eccworksltd.com</span>
+              Contact our Managing Director: <span className="text-accent">info@eccworksltd.com</span>
             </p>
           </div>
         </div>
