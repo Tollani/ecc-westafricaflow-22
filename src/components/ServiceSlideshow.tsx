@@ -6,7 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import hvacImage from "@/assets/photo_5850491347398675341_x.jpg";
+import hvacImage from "@/assets/hvac system.jpg";
 import coolingImage from "@/assets/data Center.jpg";
 import installationImage from "@/assets/service-installation-real.jpg";
 import maintenanceImage from "@/assets/service-maintenance-real.jpg";
