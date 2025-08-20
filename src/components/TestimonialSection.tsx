@@ -4,23 +4,23 @@ import { Card, CardContent } from "@/components/ui/card";
 const TestimonialSection = () => {
   const testimonials = [
     {
-      name: "Dr. Adebayo Okonkwo",
+      name: "Dr. Adebayo Adenuga",
       position: "Facilities Manager",
-      company: "Lagos Tech Hub",
+      company: "Avalon Tech Hub",
       content: "ECC WORKS LIMITED transformed our data center infrastructure. Their attention to detail and international standards exceeded our expectations. Outstanding electrical and cooling solutions.",
       rating: 5
     },
     {
-      name: "Mrs. Fatima Ibrahim",
+      name: "Mrs. Fatima Aina",
       position: "Operations Director",
-      company: "West Africa Medical Center",
+      company: "Hospequip Medical Facilty",
       content: "Reliable, professional, and efficient. Their HVAC maintenance services have kept our critical medical facility running smoothly for over two years. Highly recommended.",
       rating: 5
     },
     {
-      name: "Eng. Chidi Okafor",
+      name: "Eng. Chidi Uche",
       position: "Chief Engineer",
-      company: "Industrial Complex Ltd",
+      company: "Industrial Material Solution Ltd",
       content: "From installation to ongoing maintenance, ECC WORKS LIMITED delivers top-notch services. Their team's expertise in electrical systems is unmatched in the region.",
       rating: 5
     }
