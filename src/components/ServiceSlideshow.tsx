@@ -11,7 +11,7 @@ import coolingImage from "@/assets/data Center.jpg";
 import installationImage from "@/assets/service-installation-real.jpg";
 import maintenanceImage from "@/assets/service-maintenance-real.jpg";
 import hvacEquipmentImage from "@/assets/service-hvac-equipment-real.jpg";
-import electricalWorkImage from "@/assets/service-electrical-real.jpg";
+import electricalWorkImage from "@/assets/electrical service.jpg";
 import technicianWorkImage from "@/assets/service-technician-real.jpg";
 import mechanicalSystemsImage from "@/assets/service-mechanical-real.jpg";
 
