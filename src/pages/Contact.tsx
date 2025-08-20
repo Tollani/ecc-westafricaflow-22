@@ -152,14 +152,14 @@ const Contact = () => {
                 <CardContent className="p-8 text-center">
                   <Users className="w-16 h-16 text-accent mx-auto mb-6" />
                   <h3 className="text-2xl font-bold text-foreground mb-4">
-                    Meet Our Managing Director
+                    Meet Our Managing Director -Aaron Ewoh
                   </h3>
                   <p className="text-lg text-muted-foreground mb-4">
                     For executive-level discussions and strategic partnerships, connect directly with our leadership team.
                   </p>
                   <div className="bg-gradient-to-r from-accent/10 to-primary/10 p-4 rounded-lg">
                     <p className="text-foreground font-semibold">
-                      Director Email: <span className="text-accent">director@eccworksltd.com</span>
+                      Director Email: <span className="text-accent">info@eccworksltd.com</span>
                     </p>
                   </div>
                 </CardContent>
