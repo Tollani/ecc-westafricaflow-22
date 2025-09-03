@@ -23,25 +23,36 @@ const Contact = () => {
   const { toast } = useToast();
 
   const onSubmit = async (data: QuoteFormData) => {
+    console.log('Form submission started with data:', data);
+    
     try {
+      console.log('Making request to submit-form.com...');
+      
       const response = await fetch('https://submit-form.com/uCWDeiTrb', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
         body: JSON.stringify(data),
       });
 
+      console.log('Response received:', response.status, response.statusText);
+      
       if (response.ok) {
+        console.log('Form submitted successfully');
         toast({
           title: "Quote Request Received!",
           description: "Thank you for your interest. We will contact you soon with a detailed quote.",
         });
         reset();
       } else {
-        throw new Error('Failed to submit form');
+        const errorText = await response.text();
+        console.error('Form submission failed:', response.status, errorText);
+        throw new Error(`Failed to submit form: ${response.status} ${response.statusText}`);
       }
     } catch (error) {
+      console.error('Form submission error:', error);
       toast({
         title: "Submission Failed",
         description: "There was an error submitting your request. Please try again or contact us directly.",
