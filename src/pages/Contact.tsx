@@ -5,7 +5,51 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock, Users } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
+
+interface QuoteFormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  company: string;
+  service: string;
+  projectDetails: string;
+}
 const Contact = () => {
+  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<QuoteFormData>();
+  const { toast } = useToast();
+
+  const onSubmit = async (data: QuoteFormData) => {
+    try {
+      const response = await fetch('https://submit-form.com/uCWDeiTrb', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Quote Request Received!",
+          description: "Thank you for your interest. We will contact you soon with a detailed quote.",
+        });
+        reset();
+      } else {
+        throw new Error('Failed to submit form');
+      }
+    } catch (error) {
+      toast({
+        title: "Submission Failed",
+        description: "There was an error submitting your request. Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    }
+  };
+
   return <div className="min-h-screen">
       <Navigation />
       
@@ -79,19 +123,29 @@ const Contact = () => {
                 </p>
               </div>
 
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
                       First Name *
                     </label>
-                    <Input placeholder="Your first name" className="transition-all duration-300 focus:ring-2 focus:ring-accent" required />
+                    <Input 
+                      {...register("firstName", { required: "First name is required" })}
+                      placeholder="Your first name" 
+                      className="transition-all duration-300 focus:ring-2 focus:ring-accent"
+                    />
+                    {errors.firstName && <p className="text-red-500 text-sm mt-1">{errors.firstName.message}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Last Name *
                     </label>
-                    <Input placeholder="Your last name" className="transition-all duration-300 focus:ring-2 focus:ring-accent" required />
+                    <Input 
+                      {...register("lastName", { required: "Last name is required" })}
+                      placeholder="Your last name" 
+                      className="transition-all duration-300 focus:ring-2 focus:ring-accent"
+                    />
+                    {errors.lastName && <p className="text-red-500 text-sm mt-1">{errors.lastName.message}</p>}
                   </div>
                 </div>
 
@@ -100,13 +154,29 @@ const Contact = () => {
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Email Address *
                     </label>
-                    <Input type="email" placeholder="your.email@company.com" className="transition-all duration-300 focus:ring-2 focus:ring-accent" required />
+                    <Input 
+                      {...register("email", { 
+                        required: "Email is required",
+                        pattern: {
+                          value: /^\S+@\S+$/i,
+                          message: "Invalid email address"
+                        }
+                      })}
+                      type="email" 
+                      placeholder="your.email@company.com" 
+                      className="transition-all duration-300 focus:ring-2 focus:ring-accent"
+                    />
+                    {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Phone Number
                     </label>
-                    <Input placeholder="+234 (0) 123 456 7890" className="transition-all duration-300 focus:ring-2 focus:ring-accent" />
+                    <Input 
+                      {...register("phone")}
+                      placeholder="+234 (0) 123 456 7890" 
+                      className="transition-all duration-300 focus:ring-2 focus:ring-accent" 
+                    />
                   </div>
                 </div>
 
@@ -114,14 +184,21 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Company/Organization
                   </label>
-                  <Input placeholder="Your company name" className="transition-all duration-300 focus:ring-2 focus:ring-accent" />
+                  <Input 
+                    {...register("company")}
+                    placeholder="Your company name" 
+                    className="transition-all duration-300 focus:ring-2 focus:ring-accent" 
+                  />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Service Required *
                   </label>
-                  <select className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground transition-all duration-300 focus:ring-2 focus:ring-accent">
+                  <select 
+                    {...register("service", { required: "Please select a service" })}
+                    className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground transition-all duration-300 focus:ring-2 focus:ring-accent"
+                  >
                     <option value="">Select a service</option>
                     <option value="installation">Installation</option>
                     <option value="maintenance">Maintenance</option>
@@ -131,17 +208,24 @@ const Contact = () => {
                     <option value="procurement">Procurement</option>
                     <option value="other">Other</option>
                   </select>
+                  {errors.service && <p className="text-red-500 text-sm mt-1">{errors.service.message}</p>}
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Project Details *
                   </label>
-                  <Textarea placeholder="Please describe your project requirements, timeline, and any specific needs..." rows={6} className="transition-all duration-300 focus:ring-2 focus:ring-accent" required />
+                  <Textarea 
+                    {...register("projectDetails", { required: "Project details are required" })}
+                    placeholder="Please describe your project requirements, timeline, and any specific needs..." 
+                    rows={6} 
+                    className="transition-all duration-300 focus:ring-2 focus:ring-accent"
+                  />
+                  {errors.projectDetails && <p className="text-red-500 text-sm mt-1">{errors.projectDetails.message}</p>}
                 </div>
 
-                <Button type="submit" size="lg" className="w-full btn-hero">
-                  Submit Quote Request
+                <Button type="submit" size="lg" className="w-full btn-hero" disabled={isSubmitting}>
+                  {isSubmitting ? "Submitting..." : "Submit Quote Request"}
                 </Button>
               </form>
             </div>
