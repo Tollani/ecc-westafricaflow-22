@@ -5,81 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
 import { MapPin, Phone, Mail, Clock, Users } from "lucide-react";
-import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 const Contact = () => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    company: "",
-    service: "",
-    projectDetails: "",
-  });
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.service || !formData.projectDetails) {
-      toast({
-        title: "Missing Information",
-        description: "Please fill in all required fields marked with *",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-
-    try {
-      const { data, error } = await supabase.functions.invoke('send-quote-request', {
-        body: formData
-      });
-
-      if (error) {
-        throw error;
-      }
-
-      toast({
-        title: "Quote Request Submitted Successfully! ✅",
-        description: "Your request has been received and we'll contact you soon. Thank you for choosing ECC Works Ltd.",
-      });
-
-      // Reset form
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        company: "",
-        service: "",
-        projectDetails: "",
-      });
-
-    } catch (error: any) {
-      console.error("Error submitting quote request:", error);
-      toast({
-        title: "Submission Failed",
-        description: "There was an error sending your quote request. Please try again or contact us directly.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return <div className="min-h-screen">
       <Navigation />
       
@@ -153,33 +79,19 @@ const Contact = () => {
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
                       First Name *
                     </label>
-                    <Input 
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleInputChange}
-                      placeholder="Your first name" 
-                      className="transition-all duration-300 focus:ring-2 focus:ring-accent" 
-                      required 
-                    />
+                    <Input placeholder="Your first name" className="transition-all duration-300 focus:ring-2 focus:ring-accent" required />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Last Name *
                     </label>
-                    <Input 
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleInputChange}
-                      placeholder="Your last name" 
-                      className="transition-all duration-300 focus:ring-2 focus:ring-accent" 
-                      required 
-                    />
+                    <Input placeholder="Your last name" className="transition-all duration-300 focus:ring-2 focus:ring-accent" required />
                   </div>
                 </div>
 
@@ -188,27 +100,13 @@ const Contact = () => {
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Email Address *
                     </label>
-                    <Input 
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="your.email@company.com" 
-                      className="transition-all duration-300 focus:ring-2 focus:ring-accent" 
-                      required 
-                    />
+                    <Input type="email" placeholder="your.email@company.com" className="transition-all duration-300 focus:ring-2 focus:ring-accent" required />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Phone Number
                     </label>
-                    <Input 
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder="+234 (0) 123 456 7890" 
-                      className="transition-all duration-300 focus:ring-2 focus:ring-accent" 
-                    />
+                    <Input placeholder="+234 (0) 123 456 7890" className="transition-all duration-300 focus:ring-2 focus:ring-accent" />
                   </div>
                 </div>
 
@@ -216,34 +114,22 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Company/Organization
                   </label>
-                  <Input 
-                    name="company"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    placeholder="Your company name" 
-                    className="transition-all duration-300 focus:ring-2 focus:ring-accent" 
-                  />
+                  <Input placeholder="Your company name" className="transition-all duration-300 focus:ring-2 focus:ring-accent" />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Service Required *
                   </label>
-                  <select 
-                    name="service"
-                    value={formData.service}
-                    onChange={handleInputChange}
-                    className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground transition-all duration-300 focus:ring-2 focus:ring-accent"
-                    required
-                  >
+                  <select className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground transition-all duration-300 focus:ring-2 focus:ring-accent">
                     <option value="">Select a service</option>
-                    <option value="Installation">Installation</option>
-                    <option value="Maintenance">Maintenance</option>
-                    <option value="HVAC Systems">HVAC Systems</option>
-                    <option value="Data Center Cooling">Data Center Cooling</option>
-                    <option value="Commissioning">Commissioning</option>
-                    <option value="Procurement">Procurement</option>
-                    <option value="Other">Other</option>
+                    <option value="installation">Installation</option>
+                    <option value="maintenance">Maintenance</option>
+                    <option value="hvac">HVAC Systems</option>
+                    <option value="cooling">Data Center Cooling</option>
+                    <option value="commissioning">Commissioning</option>
+                    <option value="procurement">Procurement</option>
+                    <option value="other">Other</option>
                   </select>
                 </div>
 
@@ -251,24 +137,11 @@ const Contact = () => {
                   <label className="block text-sm font-medium text-foreground mb-2">
                     Project Details *
                   </label>
-                  <Textarea 
-                    name="projectDetails"
-                    value={formData.projectDetails}
-                    onChange={handleInputChange}
-                    placeholder="Please describe your project requirements, timeline, and any specific needs..." 
-                    rows={6} 
-                    className="transition-all duration-300 focus:ring-2 focus:ring-accent" 
-                    required 
-                  />
+                  <Textarea placeholder="Please describe your project requirements, timeline, and any specific needs..." rows={6} className="transition-all duration-300 focus:ring-2 focus:ring-accent" required />
                 </div>
 
-                <Button 
-                  type="submit" 
-                  size="lg" 
-                  className="w-full btn-hero" 
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? "Submitting..." : "Submit Quote Request"}
+                <Button type="submit" size="lg" className="w-full btn-hero">
+                  Submit Quote Request
                 </Button>
               </form>
             </div>
