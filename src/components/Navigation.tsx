@@ -41,7 +41,7 @@ const Navigation = () => {
               />
               <div className="flex flex-col">
                 <span className="font-bold text-lg">ECC WORKS LIMITED</span>
-                <span className="text-xs text-primary-foreground/80">Electrical • Mechanical • Data Cooling Center</span>
+                <span className="text-[0.45rem] text-primary-foreground/80">Electrical • Mechanical • Data Cooling Center</span>
               </div>
             </Link>
           </div>
