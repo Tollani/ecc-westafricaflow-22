@@ -39,7 +39,10 @@ const Navigation = () => {
                 alt="ECC WORKS LIMITED Logo" 
                 className="h-8 w-auto"
               />
-              <span className="font-bold text-lg">ECC WORKS LIMITED</span>
+              <div className="flex flex-col">
+                <span className="font-bold text-lg">ECC WORKS LIMITED</span>
+                <span className="text-xs text-primary-foreground/80">Electrical • Mechanical • Data Cooling Center</span>
+              </div>
             </Link>
           </div>
 
