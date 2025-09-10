@@ -35,7 +35,7 @@ const Navigation = () => {
           <div className="flex items-center space-x-3">
             <Link to="/" className="flex items-center space-x-2">
               <img 
-                src="/lovable-uploads/2fdfb564-fbfd-47dd-ae75-32bab72bfa61.png" 
+                src="/lovable-uploads/4304ba9d-ffc3-45f7-941a-b7ae1d70a2e9.png" 
                 alt="ECC WORKS LIMITED Logo" 
                 className="h-8 w-auto"
               />
