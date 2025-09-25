@@ -28,7 +28,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-primary text-primary-foreground shadow-lg">
+    <nav className="sticky top-0 z-50 bg-background text-primary shadow-lg border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo and Brand */}
@@ -46,7 +46,7 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-8">
             <Link
               to="/"
-              className={`hover:text-accent transition-colors duration-300 ${
+              className={`text-primary hover:text-accent transition-colors duration-300 ${
                 isActive("/") ? "text-accent font-semibold" : ""
               }`}
             >
@@ -54,7 +54,7 @@ const Navigation = () => {
             </Link>
             <Link
               to="/about"
-              className={`hover:text-accent transition-colors duration-300 ${
+              className={`text-primary hover:text-accent transition-colors duration-300 ${
                 isActive("/about") ? "text-accent font-semibold" : ""
               }`}
             >
@@ -63,7 +63,7 @@ const Navigation = () => {
             
             {/* Services Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center space-x-1 hover:text-accent transition-colors duration-300">
+              <DropdownMenuTrigger className="flex items-center space-x-1 text-primary hover:text-accent transition-colors duration-300">
                 <span>Services</span>
                 <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
@@ -83,7 +83,7 @@ const Navigation = () => {
 
             <Link
               to="/capabilities"
-              className={`hover:text-accent transition-colors duration-300 ${
+              className={`text-primary hover:text-accent transition-colors duration-300 ${
                 isActive("/capabilities") ? "text-accent font-semibold" : ""
               }`}
             >
@@ -91,7 +91,7 @@ const Navigation = () => {
             </Link>
             <Link
               to="/contact"
-              className={`hover:text-accent transition-colors duration-300 ${
+              className={`text-primary hover:text-accent transition-colors duration-300 ${
                 isActive("/contact") ? "text-accent font-semibold" : ""
               }`}
             >
@@ -112,7 +112,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-primary-foreground hover:text-accent transition-colors duration-300"
+              className="text-primary hover:text-accent transition-colors duration-300"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -121,39 +121,39 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-primary-foreground/20">
+          <div className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col space-y-3">
               <Link
                 to="/"
-                className="hover:text-accent transition-colors duration-300"
+                className="text-primary hover:text-accent transition-colors duration-300"
                 onClick={() => setIsOpen(false)}
               >
                 Home
               </Link>
               <Link
                 to="/about"
-                className="hover:text-accent transition-colors duration-300"
+                className="text-primary hover:text-accent transition-colors duration-300"
                 onClick={() => setIsOpen(false)}
               >
                 About Us
               </Link>
               <Link
                 to="/services"
-                className="hover:text-accent transition-colors duration-300"
+                className="text-primary hover:text-accent transition-colors duration-300"
                 onClick={() => setIsOpen(false)}
               >
                 Services
               </Link>
               <Link
                 to="/capabilities"
-                className="hover:text-accent transition-colors duration-300"
+                className="text-primary hover:text-accent transition-colors duration-300"
                 onClick={() => setIsOpen(false)}
               >
                 Capabilities
               </Link>
               <Link
                 to="/contact"
-                className="hover:text-accent transition-colors duration-300"
+                className="text-primary hover:text-accent transition-colors duration-300"
                 onClick={() => setIsOpen(false)}
               >
                 Contact
