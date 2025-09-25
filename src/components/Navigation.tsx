@@ -33,16 +33,12 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo and Brand */}
           <div className="flex items-center space-x-3">
-            <Link to="/" className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center">
               <img 
-                src="/lovable-uploads/4304ba9d-ffc3-45f7-941a-b7ae1d70a2e9.png" 
-                alt="ECC WORKS LIMITED Logo" 
-                className="h-8 w-auto"
+                src="/lovable-uploads/ecc-works-logo.jpg" 
+                alt="ECC WORKS LIMITED - Electrical • Mechanical • Data Center Cooling" 
+                className="h-12 w-auto"
               />
-              <div className="flex flex-col">
-                <span className="font-bold text-lg">ECC WORKS LIMITED</span>
-                <span className="text-[0.45rem] text-primary-foreground/80">Electrical • Mechanical • Data Center Cooling </span>
-              </div>
             </Link>
           </div>
 
