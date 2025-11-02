@@ -71,3 +71,59 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+
+## How to deploy to cPanel/Traditional Web Hosting
+
+This project is configured for deployment to traditional web hosting services (cPanel, shared hosting) via File Manager upload.
+
+### Prerequisites
+
+- Node.js & npm installed locally
+- Access to your hosting cPanel File Manager
+- Supabase account (if using backend features)
+
+### Step 1: Configure Environment Variables
+
+1. Copy `.env.example` to `.env`
+2. Fill in your Supabase credentials from your [Supabase dashboard](https://supabase.com/dashboard)
+3. Never commit the `.env` file to version control
+
+### Step 2: Build the Project
+
+Run the build command locally:
+
+```sh
+npm run build
+```
+
+This creates a `dist` folder with production-ready files.
+
+### Step 3: Upload to Hosting
+
+1. **Log in to cPanel** and open the File Manager
+2. **Navigate to** `public_html` directory (or your domain's root directory)
+3. **Delete existing files** in public_html (if any)
+4. **Upload all contents** from the `dist` folder:
+   - Select all files and folders inside `dist`
+   - Upload them directly to `public_html`
+   - Do NOT upload the `dist` folder itself, only its contents
+5. **Verify .htaccess** file is present (it handles React Router routing)
+
+### Step 4: Verify Deployment
+
+Visit your domain - the application should load and all routes should work correctly.
+
+### Troubleshooting
+
+- **Routes return 404**: Ensure `.htaccess` file is uploaded and mod_rewrite is enabled on your server
+- **Blank page**: Check browser console for errors, verify environment variables are set
+- **Assets not loading**: Ensure all files from `dist` folder were uploaded to the root of public_html
+- **HTTPS issues**: The .htaccess file includes automatic HTTPS redirect rules
+
+### Updating Your Site
+
+To deploy updates:
+
+1. Make changes to your code
+2. Run `npm run build` again
+3. Upload the new `dist` folder contents to public_html (overwriting existing files)
